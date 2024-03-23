@@ -128,7 +128,7 @@ public class YatzyApprovalsTests {
     @Test
     void approvals_verify_three_of_a_kind() {
         CombinationApprovals.verifyAllCombinations(
-            Yatzy::threeOfAKind,
+            (dice1, dice2, dice3, dice4, dice5) -> new Yatzy(dice1, dice2, dice3, dice4, dice5).threeOfAKind(),
             DICE_VALUES,
             DICE_VALUES,
             DICE_VALUES,

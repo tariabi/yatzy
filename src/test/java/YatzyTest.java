@@ -140,17 +140,17 @@ public class YatzyTest {
 
     @Test
     void three_of_a_kind_33345_yields_9() {
-        assertEquals(9, Yatzy.threeOfAKind(3, 3, 3, 4, 5));
+        assertEquals(9, new Yatzy(3, 3, 3, 4, 5).threeOfAKind());
     }
 
     @Test
     void three_of_a_kind_53545_yields_15() {
-        assertEquals(15, Yatzy.threeOfAKind(5, 3, 5, 4, 5));
+        assertEquals(15, new Yatzy(5, 3, 5, 4, 5).threeOfAKind());
     }
 
     @Test
     void three_of_a_kind_33335_yields_9() {
-        assertEquals(9, Yatzy.threeOfAKind(3, 3, 3, 3, 5));
+        assertEquals(9, new Yatzy(3, 3, 3, 3, 5).threeOfAKind());
     }
 
     @Test
