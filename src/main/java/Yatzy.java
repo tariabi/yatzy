@@ -70,17 +70,13 @@ public class Yatzy {
     }
 
     public int smallStraight() {
-        var scoreCalculator = new StraightScoreCalculator(dices);
+        var scoreCalculator = new SmallStraightScoreCalculator(dices);
         return scoreCalculator.computeScore();
     }
 
     public int largeStraight() {
-        var tallies = new ScoreUtils().buildIntArrayFromParametersList(dices);
-        for (int i = 1; i < tallies.length; i++) {
-            if (tallies[i] != 1)
-                return 0;
-        }
-        return 20;
+        var scoreCalculator = new LargeStraightScoreCalculator(dices);
+        return scoreCalculator.computeScore();
     }
 
     public int fullHouse() {
