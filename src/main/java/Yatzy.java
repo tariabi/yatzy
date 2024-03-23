@@ -1,19 +1,19 @@
 public class Yatzy {
 
-    private final int[] dice;
+    private final int[] dices;
 
     public Yatzy(int dice1, int dice2, int dice3, int dice4, int dice5) {
-        dice = new int[5];
-        dice[0] = dice1;
-        dice[1] = dice2;
-        dice[2] = dice3;
-        dice[3] = dice4;
-        dice[4] = dice5;
+        dices = new int[5];
+        dices[0] = dice1;
+        dices[1] = dice2;
+        dices[2] = dice3;
+        dices[3] = dice4;
+        dices[4] = dice5;
     }
 
     public int chance() {
         int total = 0;
-        for (int die : dice) {
+        for (int die : dices) {
             total += die;
         }
         return total;
@@ -29,11 +29,11 @@ public class Yatzy {
 
     private int countNumber(int countedValue) {
         int sum = 0;
-        if (dice[0] == countedValue) sum += countedValue;
-        if (dice[1] == countedValue) sum += countedValue;
-        if (dice[2] == countedValue) sum += countedValue;
-        if (dice[3] == countedValue) sum += countedValue;
-        if (dice[4] == countedValue) sum += countedValue;
+        if (dices[0] == countedValue) sum += countedValue;
+        if (dices[1] == countedValue) sum += countedValue;
+        if (dices[2] == countedValue) sum += countedValue;
+        if (dices[3] == countedValue) sum += countedValue;
+        if (dices[4] == countedValue) sum += countedValue;
         return sum;
     }
 
@@ -51,7 +51,7 @@ public class Yatzy {
 
     private int[] buildIntArrayFromParametersList() {
         int[] tallies = new int[6];
-        for (int die:dice) {
+        for (int die: dices) {
             tallies[die - 1]++;
         }
         return tallies;
@@ -141,7 +141,7 @@ public class Yatzy {
 
     private int computeSumOf(int countedValue) {
         int sum = 0;
-        for (int die : dice) {
+        for (int die : dices) {
             if (die == countedValue) {
                 sum += countedValue;
             }
