@@ -1,6 +1,9 @@
 package calculator;
 
 import model.DiceRolls;
+import model.DieRoll;
+
+import java.util.Arrays;
 
 public class FullHouseScoreCalculator extends AbstractYatzyScoreCalculator {
 
@@ -10,27 +13,10 @@ public class FullHouseScoreCalculator extends AbstractYatzyScoreCalculator {
 
     @Override
     public int computeScore() {
-        var tallies = dice.buildRollsOccurrenceList();
-        boolean _2 = false;
-        int _2_at = 0;
-        boolean _3 = false;
-        int _3_at = 0;
-
-        for (int i = 0; i < tallies.size(); i++)
-            if (tallies.get(i) == 2) {
-                _2 = true;
-                _2_at = i + 1;
-            }
-
-        for (int i = 0; i < tallies.size(); i++)
-            if (tallies.get(i) == 3) {
-                _3 = true;
-                _3_at = i + 1;
-            }
-
-        if (_2 && _3)
-            return _2_at * 2 + _3_at * 3;
-        else
-            return 0;
+        var map = dice.buildRollsOccurrenceMap();
+        if (map.containsValue(3) && map.containsValue(2)) {
+            return Arrays.stream(dice.getRolls()).map(DieRoll::toNumber).reduce(0, Integer::sum);
+        }
+        return 0;
     }
 }

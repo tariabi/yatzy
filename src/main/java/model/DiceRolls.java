@@ -1,8 +1,6 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class DiceRolls {
 
@@ -48,5 +46,16 @@ public class DiceRolls {
             result.add(occurrences);
         }
         return result;
+    }
+
+    public Map<DieRoll, Integer> buildRollsOccurrenceMap() {
+        Map<DieRoll, Integer> map = new HashMap<>();
+        for (DieRoll dieRoll: rolls) {
+            if (!map.containsKey(dieRoll)) {
+                map.put(dieRoll, 0);
+            }
+            map.put(dieRoll, 1 + map.get(dieRoll));
+        }
+        return map;
     }
 }
