@@ -1,9 +1,7 @@
-public class ChanceScoreCalculator implements IYatzyScoreCalculator {
-
-    private final int[] dices;
+public class ChanceScoreCalculator extends AbstractYatzyScoreCalculator {
 
     public ChanceScoreCalculator(int[] dices) {
-        this.dices = dices;
+        super(dices);
     }
 
     @Override
