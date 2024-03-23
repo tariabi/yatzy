@@ -27,26 +27,26 @@ public class Yatzy {
         return 0;
     }
 
-    private static int countNumber(int dice1, int dice2, int dice3, int dice4, int dice5, int countedValue) {
+    private int countNumber(int countedValue) {
         int sum = 0;
-        if (dice1 == countedValue) sum += countedValue;
-        if (dice2 == countedValue) sum += countedValue;
-        if (dice3 == countedValue) sum += countedValue;
-        if (dice4 == countedValue) sum += countedValue;
-        if (dice5 == countedValue) sum += countedValue;
+        if (dice[0] == countedValue) sum += countedValue;
+        if (dice[1] == countedValue) sum += countedValue;
+        if (dice[2] == countedValue) sum += countedValue;
+        if (dice[3] == countedValue) sum += countedValue;
+        if (dice[4] == countedValue) sum += countedValue;
         return sum;
     }
 
     public int ones() {
-        return countNumber(dice[0], dice[1], dice[2], dice[3], dice[4], 1);
+        return countNumber(1);
     }
 
     public int twos() {
-        return countNumber(dice[0], dice[1], dice[2], dice[3], dice[4], 2);
+        return countNumber(2);
     }
 
     public int threes() {
-        return countNumber(dice[0], dice[1], dice[2], dice[3], dice[4], 3);
+        return countNumber(3);
     }
 
     private static int[] buildIntArrayFromParametersList(int dice1, int dice2, int dice3, int dice4, int dice5) {
