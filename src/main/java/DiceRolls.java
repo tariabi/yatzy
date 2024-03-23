@@ -29,7 +29,7 @@ public class DiceRolls {
         return sum;
     }
 
-    public int[] buildIntArrayFromParametersList() {
+    public int[] buildRollsOccurrenceArray() {
         int[] tallies = new int[6];
         for (DieRoll die: rolls) {
             tallies[die.toNumber() - 1]++;

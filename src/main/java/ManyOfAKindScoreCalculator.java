@@ -8,7 +8,7 @@ public class ManyOfAKindScoreCalculator extends AbstractYatzyScoreCalculator {
 
     @Override
     public int computeScore() {
-        var tallies = dice.buildIntArrayFromParametersList();
+        var tallies = dice.buildRollsOccurrenceArray();
         for (int i = 0; i < tallies.length; i++)
             if (tallies[i] >= searchedValue)
                 return (i + 1) * searchedValue;

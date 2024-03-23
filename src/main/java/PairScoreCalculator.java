@@ -5,7 +5,7 @@ public class PairScoreCalculator extends AbstractYatzyScoreCalculator {
 
     @Override
     public int computeScore() {
-        var tallies = dice.buildIntArrayFromParametersList();
+        var tallies = dice.buildRollsOccurrenceArray();
         for (int i = 0; i < tallies.length; i++)
             if (tallies[6 - i - 1] >= 2)
                 return (6 - i) * 2;
