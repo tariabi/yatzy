@@ -124,18 +124,17 @@ public class Yatzy {
     public static int fullHouse(int dice1, int dice2, int dice3, int dice4, int dice5) {
         var tallies = buildIntArrayFromParametersList(dice1, dice2, dice3, dice4, dice5);
         boolean _2 = false;
-        int i;
         int _2_at = 0;
         boolean _3 = false;
         int _3_at = 0;
 
-        for (i = 0; i != 6; i += 1)
+        for (int i = 0; i != 6; i += 1)
             if (tallies[i] == 2) {
                 _2 = true;
                 _2_at = i + 1;
             }
 
-        for (i = 0; i != 6; i += 1)
+        for (int i = 0; i != 6; i += 1)
             if (tallies[i] == 3) {
                 _3 = true;
                 _3_at = i + 1;
