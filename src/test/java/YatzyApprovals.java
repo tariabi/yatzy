@@ -18,4 +18,20 @@ public class YatzyApprovals {
             diceValues5
         );
     }
+
+    @Test
+    void approvals_verify_yatzy() {
+        var diceValues1 = new Integer[]{1,2,3,4,5,6};
+        var diceValues2 = new Integer[]{1,2,3,4,5,6};
+        var diceValues3 = new Integer[]{1,2,3,4,5,6};
+        var diceValues4 = new Integer[]{1,2,3,4,5,6};
+        var diceValues5 = new Integer[]{1,2,3,4,5,6};
+        CombinationApprovals.verifyAllCombinations(Yatzy::yatzy,
+            diceValues1,
+            diceValues2,
+            diceValues3,
+            diceValues4,
+            diceValues5
+        );
+    }
 }
