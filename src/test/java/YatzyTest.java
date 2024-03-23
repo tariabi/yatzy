@@ -60,12 +60,12 @@ public class YatzyTest {
 
     @Test
     void threes_12323_yields_6() {
-        assertEquals(6, Yatzy.threes(1, 2, 3, 2, 3));
+        assertEquals(6, new Yatzy(1, 2, 3, 2, 3).threes());
     }
 
     @Test
     void threes_23333_yields_12() {
-        assertEquals(12, Yatzy.threes(2, 3, 3, 3, 3));
+        assertEquals(12, new Yatzy(2, 3, 3, 3, 3).threes());
     }
 
     @Test
