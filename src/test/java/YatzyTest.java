@@ -1,5 +1,6 @@
-import org.junit.*;
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class YatzyTest {
 
@@ -8,6 +9,8 @@ public class YatzyTest {
         assertEquals(15, Yatzy.chance(2,3,4,5,1));
         assertEquals(16, Yatzy.chance(3,3,4,5,1));
     }
+
+
 
     @Test public void yatzy_scores_50() {
         assertEquals(50, Yatzy.yatzy(4,4,4,4,4));
