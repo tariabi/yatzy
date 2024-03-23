@@ -1,7 +1,11 @@
+import java.util.Arrays;
+
 public class StraightScoreCalculator implements IYatzyScoreCalculator {
 
     private final int[] dices;
     private final int fallbackValue;
+
+    private static final int[] SMALL_STRAIGHT = new int[]{1, 2, 3, 4, 5};
 
     public StraightScoreCalculator(int[] dices, int fallbackValue) {
         this.dices = dices;
@@ -10,11 +14,10 @@ public class StraightScoreCalculator implements IYatzyScoreCalculator {
 
     @Override
     public int computeScore() {
-        var tallies = new ScoreUtils().buildIntArrayFromParametersList(dices);
-        for (int i = 0; i < tallies.length-1; i++) {
-            if (tallies[i] != 1)
-                return 0;
-        }
+        int[] sorted = Arrays.stream(dices).sorted().toArray();
+        boolean isSmallStraight = Arrays.equals(sorted, SMALL_STRAIGHT);
+        if (!isSmallStraight)
+            return 0;
         return fallbackValue;
     }
 }
