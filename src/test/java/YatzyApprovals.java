@@ -10,12 +10,7 @@ public class YatzyApprovals {
         var diceValues3 = new Integer[]{1,2,3,4,5,6};
         var diceValues4 = new Integer[]{1,2,3,4,5,6};
         var diceValues5 = new Integer[]{1,2,3,4,5,6};
-        CombinationApprovals.verifyAllCombinations((dice1,dice2,dice3,dice4,dice5) ->
-                Yatzy.chance(dice1,
-                    dice2,
-                    dice3,
-                    dice4,
-                    dice5),
+        CombinationApprovals.verifyAllCombinations(Yatzy::chance,
             diceValues1,
             diceValues2,
             diceValues3,
