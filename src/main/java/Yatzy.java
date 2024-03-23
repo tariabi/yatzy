@@ -54,14 +54,13 @@ public class Yatzy {
     }
 
     public static int threes(int dice1, int dice2, int dice3, int dice4, int dice5) {
-        int s;
-        s = 0;
-        if (dice1 == 3) s += 3;
-        if (dice2 == 3) s += 3;
-        if (dice3 == 3) s += 3;
-        if (dice4 == 3) s += 3;
-        if (dice5 == 3) s += 3;
-        return s;
+        int sum = 0;
+        if (dice1 == 3) sum += 3;
+        if (dice2 == 3) sum += 3;
+        if (dice3 == 3) sum += 3;
+        if (dice4 == 3) sum += 3;
+        if (dice5 == 3) sum += 3;
+        return sum;
     }
 
     public static int score_pair(int dice1, int dice2, int dice3, int dice4, int dice5) {
