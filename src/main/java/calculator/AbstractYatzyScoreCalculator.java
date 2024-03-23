@@ -1,3 +1,7 @@
+package calculator;
+
+import model.DiceRolls;
+
 public abstract class AbstractYatzyScoreCalculator implements IYatzyScoreCalculator {
 
     protected final DiceRolls dice;

@@ -1,3 +1,7 @@
+package calculator;
+
+import model.DiceRolls;
+
 import java.util.Arrays;
 
 public class SmallStraightScoreCalculator extends AbstractYatzyScoreCalculator {

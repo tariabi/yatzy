@@ -1,3 +1,7 @@
+package calculator;
+
+import model.DiceRolls;
+
 public class CountScoreCalculator extends AbstractYatzyScoreCalculator {
     private final int countedValue;
 

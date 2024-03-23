@@ -1,3 +1,7 @@
+package calculator;
+
+import model.DiceRolls;
+
 public class FullHouseScoreCalculator extends AbstractYatzyScoreCalculator {
 
     public FullHouseScoreCalculator(DiceRolls diceRolls) {

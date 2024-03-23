@@ -1,5 +1,7 @@
+package model;
+
 public class DieRoll {
-    private int roll;
+    private final int roll;
 
     public DieRoll(int roll) {
         if (roll >= 1 && roll <= 6) {

@@ -1,3 +1,7 @@
+package calculator;
+
+import model.DiceRolls;
+
 public class PairScoreCalculator extends AbstractYatzyScoreCalculator {
     public PairScoreCalculator(DiceRolls diceRolls) {
         super(diceRolls);

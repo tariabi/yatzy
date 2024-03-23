@@ -1,3 +1,7 @@
+package calculator;
+
+import model.DiceRolls;
+
 public class ManyOfAKindScoreCalculator extends AbstractYatzyScoreCalculator {
     private final int searchedValue;
 

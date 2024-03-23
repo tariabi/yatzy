@@ -1,3 +1,7 @@
+import calculator.*;
+import model.DiceRolls;
+import model.DieRoll;
+
 public class Yatzy {
 
     private final DiceRolls dice;
