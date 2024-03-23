@@ -12,7 +12,7 @@ public class Yatzy {
     }
 
     public int chance() {
-        var scoreCalculator = new ChanceScoreCalculator(this.dices);
+        var scoreCalculator = new ChanceScoreCalculator(dices);
         return scoreCalculator.computeScore();
     }
 
