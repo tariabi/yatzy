@@ -70,12 +70,8 @@ public class Yatzy {
     }
 
     public int smallStraight() {
-        var tallies = new ScoreUtils().buildIntArrayFromParametersList(dices);
-        for (int i = 0; i < tallies.length-1; i++) {
-            if (tallies[i] != 1)
-                return 0;
-        }
-        return 15;
+        var scoreCalculator = new StraightScoreCalculator(dices, 15);
+        return scoreCalculator.computeScore();
     }
 
     public int largeStraight() {
