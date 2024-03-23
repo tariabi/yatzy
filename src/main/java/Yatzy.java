@@ -70,7 +70,7 @@ public class Yatzy {
     }
 
     public int smallStraight() {
-        var scoreCalculator = new StraightScoreCalculator(dices, 15);
+        var scoreCalculator = new StraightScoreCalculator(dices);
         return scoreCalculator.computeScore();
     }
 
