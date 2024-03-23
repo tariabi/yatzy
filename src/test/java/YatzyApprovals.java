@@ -7,7 +7,8 @@ public class YatzyApprovals {
 
     @Test
     void approvals_verify_chance() {
-        CombinationApprovals.verifyAllCombinations(Yatzy::chance,
+        CombinationApprovals.verifyAllCombinations(
+            (dice1, dice2, dice3, dice4, dice5) -> new Yatzy(dice1, dice2, dice3, dice4, dice5).chance(),
             DICE_VALUES,
             DICE_VALUES,
             DICE_VALUES,

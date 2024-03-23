@@ -5,12 +5,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class YatzyTest {
     @Test
     void chance_23451_yields_15() {
-        assertEquals(15, Yatzy.chance(2, 3, 4, 5, 1));
+        assertEquals(15, new Yatzy(2, 3, 4, 5, 1).chance());
     }
 
     @Test
     void chance_33451_yields_16() {
-        assertEquals(16, Yatzy.chance(3, 3, 4, 5, 1));
+        assertEquals(16, new Yatzy(3, 3, 4, 5, 1).chance());
     }
 
     @Test
