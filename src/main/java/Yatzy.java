@@ -88,7 +88,7 @@ public class Yatzy {
 
     public static int four_of_a_kind(int dice1, int dice2, int dice3, int dice4, int dice5) {
         var tallies = buildIntArrayFromParametersList(dice1, dice2, dice3, dice4, dice5);
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < tallies.length; i++)
             if (tallies[i] >= 4)
                 return (i + 1) * 4;
         return 0;
