@@ -17,11 +17,8 @@ public class Yatzy {
     }
 
     public int yatzy() {
-        var tallies = buildIntArrayFromParametersList();
-        for (int tally : tallies)
-            if (tally == 5)
-                return 50;
-        return 0;
+        var scoreCalculator = new YatzyScoreCalculator(dices);
+        return scoreCalculator.computeScore();
     }
 
     private int countNumber(int countedValue) {
