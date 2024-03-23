@@ -75,7 +75,7 @@ public class Yatzy {
         var tallies = buildIntArrayFromParametersList(dice1, dice2, dice3, dice4, dice5);
         int n = 0;
         int score = 0;
-        for (int i = 0; i < 6; i += 1)
+        for (int i = 0; i < tallies.length; i++)
             if (tallies[6 - i - 1] >= 2) {
                 n++;
                 score += (6 - i);
@@ -127,13 +127,13 @@ public class Yatzy {
         boolean _3 = false;
         int _3_at = 0;
 
-        for (int i = 0; i != 6; i += 1)
+        for (int i = 0; i < tallies.length; i++)
             if (tallies[i] == 2) {
                 _2 = true;
                 _2_at = i + 1;
             }
 
-        for (int i = 0; i != 6; i += 1)
+        for (int i = 0; i < tallies.length; i++)
             if (tallies[i] == 3) {
                 _3 = true;
                 _3_at = i + 1;
