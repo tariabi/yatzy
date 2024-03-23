@@ -5,7 +5,7 @@ public class YatzyScoreCalculator extends AbstractYatzyScoreCalculator {
     }
     @Override
     public int computeScore() {
-        var tallies = new ScoreUtils().buildIntArrayFromParametersList(dice);
+        var tallies = dice.buildIntArrayFromParametersList();
         for (int tally : tallies)
             if (tally == 5)
                 return 50;

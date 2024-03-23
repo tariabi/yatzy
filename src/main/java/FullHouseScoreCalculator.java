@@ -6,7 +6,7 @@ public class FullHouseScoreCalculator extends AbstractYatzyScoreCalculator {
 
     @Override
     public int computeScore() {
-        var tallies = new ScoreUtils().buildIntArrayFromParametersList(dice);
+        var tallies = dice.buildIntArrayFromParametersList();
         boolean _2 = false;
         int _2_at = 0;
         boolean _3 = false;

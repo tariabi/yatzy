@@ -10,7 +10,6 @@ public class Yatzy {
             new DieRoll(dice4),
             new DieRoll(dice5)}
         );
-
     }
 
     public int chance() {
