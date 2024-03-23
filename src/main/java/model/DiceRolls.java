@@ -1,6 +1,8 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class DiceRolls {
 
@@ -37,5 +39,14 @@ public class DiceRolls {
             tallies[die.toNumber() - 1]++;
         }
         return tallies;
+    }
+
+    public List<Integer> buildRollsOccurrenceList() {
+        var rollsOccurrenceArray = buildRollsOccurrenceArray();
+        var result = new ArrayList<Integer>();
+        for (int occurrences : rollsOccurrenceArray) {
+            result.add(occurrences);
+        }
+        return result;
     }
 }
