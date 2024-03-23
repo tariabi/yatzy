@@ -53,13 +53,18 @@ public class Yatzy {
         return count_number(dice1, dice2, dice3, dice4, dice5, 3);
     }
 
-    public static int score_pair(int dice1, int dice2, int dice3, int dice4, int dice5) {
+    private static int[] buildIntArrayFromParametersList(int dice1, int dice2, int dice3, int dice4, int dice5) {
         int[] tallies = new int[6];
         tallies[dice1 - 1]++;
         tallies[dice2 - 1]++;
         tallies[dice3 - 1]++;
         tallies[dice4 - 1]++;
         tallies[dice5 - 1]++;
+        return tallies;
+    }
+
+    public static int score_pair(int dice1, int dice2, int dice3, int dice4, int dice5) {
+        var tallies = buildIntArrayFromParametersList(dice1, dice2, dice3, dice4, dice5);
         int at;
         for (at = 0; at != 6; at++)
             if (tallies[6 - at - 1] >= 2)
@@ -68,12 +73,7 @@ public class Yatzy {
     }
 
     public static int two_pair(int dice1, int dice2, int dice3, int dice4, int dice5) {
-        int[] tallies = new int[6];
-        tallies[dice1 - 1]++;
-        tallies[dice2 - 1]++;
-        tallies[dice3 - 1]++;
-        tallies[dice4 - 1]++;
-        tallies[dice5 - 1]++;
+        var tallies = buildIntArrayFromParametersList(dice1, dice2, dice3, dice4, dice5);
         int n = 0;
         int score = 0;
         for (int i = 0; i < 6; i += 1)
@@ -88,12 +88,7 @@ public class Yatzy {
     }
 
     public static int four_of_a_kind(int dice1, int dice2, int dice3, int dice4, int dice5) {
-        int[] tallies = new int[6];
-        tallies[dice1 - 1]++;
-        tallies[dice2 - 1]++;
-        tallies[dice3 - 1]++;
-        tallies[dice4 - 1]++;
-        tallies[dice5 - 1]++;
+        var tallies = buildIntArrayFromParametersList(dice1, dice2, dice3, dice4, dice5);
         for (int i = 0; i < 6; i++)
             if (tallies[i] >= 4)
                 return (i + 1) * 4;
@@ -101,12 +96,7 @@ public class Yatzy {
     }
 
     public static int three_of_a_kind(int dice1, int dice2, int dice3, int dice4, int dice5) {
-        int[] tallies = new int[6];
-        tallies[dice1 - 1]++;
-        tallies[dice2 - 1]++;
-        tallies[dice3 - 1]++;
-        tallies[dice4 - 1]++;
-        tallies[dice5 - 1]++;
+        var tallies = buildIntArrayFromParametersList(dice1, dice2, dice3, dice4, dice5);
         for (int i = 0; i < 6; i++)
             if (tallies[i] >= 3)
                 return (i + 1) * 3;
@@ -114,12 +104,7 @@ public class Yatzy {
     }
 
     public static int smallStraight(int dice1, int dice2, int dice3, int dice4, int dice5) {
-        int[] tallies = new int[6];
-        tallies[dice1 - 1] += 1;
-        tallies[dice2 - 1] += 1;
-        tallies[dice3 - 1] += 1;
-        tallies[dice4 - 1] += 1;
-        tallies[dice5 - 1] += 1;
+        var tallies = buildIntArrayFromParametersList(dice1, dice2, dice3, dice4, dice5);
         if (tallies[0] == 1 &&
             tallies[1] == 1 &&
             tallies[2] == 1 &&
@@ -130,12 +115,7 @@ public class Yatzy {
     }
 
     public static int largeStraight(int dice1, int dice2, int dice3, int dice4, int dice5) {
-        int[] tallies = new int[6];
-        tallies[dice1 - 1] += 1;
-        tallies[dice2 - 1] += 1;
-        tallies[dice3 - 1] += 1;
-        tallies[dice4 - 1] += 1;
-        tallies[dice5 - 1] += 1;
+        var tallies = buildIntArrayFromParametersList(dice1, dice2, dice3, dice4, dice5);
         if (tallies[1] == 1 &&
             tallies[2] == 1 &&
             tallies[3] == 1 &&
@@ -146,12 +126,7 @@ public class Yatzy {
     }
 
     public static int fullHouse(int dice1, int dice2, int dice3, int dice4, int dice5) {
-        int[] tallies = new int[6];
-        tallies[dice1 - 1] += 1;
-        tallies[dice2 - 1] += 1;
-        tallies[dice3 - 1] += 1;
-        tallies[dice4 - 1] += 1;
-        tallies[dice5 - 1] += 1;
+        var tallies = buildIntArrayFromParametersList(dice1, dice2, dice3, dice4, dice5);
         boolean _2 = false;
         int i;
         int _2_at = 0;
