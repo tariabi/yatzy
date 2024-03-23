@@ -1,7 +1,7 @@
 import org.approvaltests.combinations.CombinationApprovals;
 import org.junit.jupiter.api.Test;
 
-public class YatzyApprovals {
+public class YatzyApprovalsTests {
 
     private static final Integer[] DICE_VALUES = new Integer[]{1,2,3,4,5,6};
 
@@ -43,7 +43,8 @@ public class YatzyApprovals {
 
     @Test
     void approvals_verify_twos() {
-        CombinationApprovals.verifyAllCombinations(Yatzy::twos,
+        CombinationApprovals.verifyAllCombinations(
+            (dice1, dice2, dice3, dice4, dice5) -> new Yatzy(dice1, dice2, dice3, dice4, dice5).twos(),
             DICE_VALUES,
             DICE_VALUES,
             DICE_VALUES,

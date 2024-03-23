@@ -50,12 +50,12 @@ public class YatzyTest {
 
     @Test
     void twos_12326_yields_4() {
-        assertEquals(4, Yatzy.twos(1, 2, 3, 2, 6));
+        assertEquals(4, new Yatzy(1, 2, 3, 2, 6).twos());
     }
 
     @Test
     void twos_22222_yields_10() {
-        assertEquals(10, Yatzy.twos(2, 2, 2, 2, 2));
+        assertEquals(10, new Yatzy(2, 2, 2, 2, 2).twos());
     }
 
     @Test

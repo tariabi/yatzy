@@ -41,8 +41,8 @@ public class Yatzy {
         return countNumber(dice[0], dice[1], dice[2], dice[3], dice[4], 1);
     }
 
-    public static int twos(int dice1, int dice2, int dice3, int dice4, int dice5) {
-        return countNumber(dice1, dice2, dice3, dice4, dice5, 2);
+    public int twos() {
+        return countNumber(dice[0], dice[1], dice[2], dice[3], dice[4], 2);
     }
 
     public static int threes(int dice1, int dice2, int dice3, int dice4, int dice5) {
