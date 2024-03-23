@@ -164,7 +164,7 @@ public class YatzyApprovalsTests {
     @Test
     void approvals_verify_largeStraight() {
         CombinationApprovals.verifyAllCombinations(
-            Yatzy::largeStraight,
+            (dice1, dice2, dice3, dice4, dice5) -> new Yatzy(dice1, dice2, dice3, dice4, dice5).largeStraight(),
             DICE_VALUES,
             DICE_VALUES,
             DICE_VALUES,

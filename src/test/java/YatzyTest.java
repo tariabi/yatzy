@@ -185,17 +185,17 @@ public class YatzyTest {
 
     @Test
     void largeStraight_62345_yields_20() {
-        assertEquals(20, Yatzy.largeStraight(6, 2, 3, 4, 5));
+        assertEquals(20, new Yatzy(6, 2, 3, 4, 5).largeStraight());
     }
 
     @Test
     void largeStraight_23456_yields_20() {
-        assertEquals(20, Yatzy.largeStraight(2, 3, 4, 5, 6));
+        assertEquals(20, new Yatzy(2, 3, 4, 5, 6).largeStraight());
     }
 
     @Test
     void largeStraight_12245_yields_0() {
-        assertEquals(0, Yatzy.largeStraight(1, 2, 2, 4, 5));
+        assertEquals(0, new Yatzy(1, 2, 2, 4, 5).largeStraight());
     }
 
     @Test
