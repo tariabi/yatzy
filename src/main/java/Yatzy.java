@@ -1,6 +1,6 @@
 public class Yatzy {
 
-    protected int[] dice;
+    private final int[] dice;
 
     public Yatzy(int dice1, int dice2, int dice3, int dice4, int dice5) {
         dice = new int[5];
