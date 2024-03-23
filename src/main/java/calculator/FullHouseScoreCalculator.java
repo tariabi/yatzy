@@ -10,20 +10,20 @@ public class FullHouseScoreCalculator extends AbstractYatzyScoreCalculator {
 
     @Override
     public int computeScore() {
-        var tallies = dice.buildRollsOccurrenceArray();
+        var tallies = dice.buildRollsOccurrenceList();
         boolean _2 = false;
         int _2_at = 0;
         boolean _3 = false;
         int _3_at = 0;
 
-        for (int i = 0; i < tallies.length; i++)
-            if (tallies[i] == 2) {
+        for (int i = 0; i < tallies.size(); i++)
+            if (tallies.get(i) == 2) {
                 _2 = true;
                 _2_at = i + 1;
             }
 
-        for (int i = 0; i < tallies.length; i++)
-            if (tallies[i] == 3) {
+        for (int i = 0; i < tallies.size(); i++)
+            if (tallies.get(i) == 3) {
                 _3 = true;
                 _3_at = i + 1;
             }

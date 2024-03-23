@@ -9,11 +9,11 @@ public class TwoPairsScoreCalculator extends AbstractYatzyScoreCalculator {
 
     @Override
     public int computeScore() {
-        var tallies = dice.buildRollsOccurrenceArray();
+        var tallies = dice.buildRollsOccurrenceList();
         int n = 0;
         int score = 0;
-        for (int i = 0; i < tallies.length; i++)
-            if (tallies[6 - i - 1] >= 2) {
+        for (int i = 0; i < tallies.size(); i++)
+            if (tallies.get(6 - i - 1) >= 2) {
                 n++;
                 score += (6 - i);
             }
