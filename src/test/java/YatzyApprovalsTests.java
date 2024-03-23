@@ -176,7 +176,7 @@ public class YatzyApprovalsTests {
     @Test
     void approvals_verify_fullHouse() {
         CombinationApprovals.verifyAllCombinations(
-            Yatzy::fullHouse,
+            (dice1, dice2, dice3, dice4, dice5) -> new Yatzy(dice1, dice2, dice3, dice4, dice5).fullHouse(),
             DICE_VALUES,
             DICE_VALUES,
             DICE_VALUES,

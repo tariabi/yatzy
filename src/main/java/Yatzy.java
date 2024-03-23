@@ -116,8 +116,8 @@ public class Yatzy {
         return 20;
     }
 
-    public static int fullHouse(int dice1, int dice2, int dice3, int dice4, int dice5) {
-        var tallies = buildIntArrayFromParametersList(dice1, dice2, dice3, dice4, dice5);
+    public int fullHouse() {
+        var tallies = buildIntArrayFromParametersList(dice[0], dice[1], dice[2], dice[3], dice[4]);
         boolean _2 = false;
         int _2_at = 0;
         boolean _3 = false;

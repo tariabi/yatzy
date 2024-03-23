@@ -200,11 +200,11 @@ public class YatzyTest {
 
     @Test
     void fullHouse_62226_yields_18() {
-        assertEquals(18, Yatzy.fullHouse(6, 2, 2, 2, 6));
+        assertEquals(18, new Yatzy(6, 2, 2, 2, 6).fullHouse());
     }
 
     @Test
     void fullHouse_23456_yields_0() {
-        assertEquals(0, Yatzy.fullHouse(2, 3, 4, 5, 6));
+        assertEquals(0, new Yatzy(2, 3, 4, 5, 6).fullHouse());
     }
 }
