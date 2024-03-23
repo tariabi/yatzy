@@ -140,7 +140,7 @@ public class YatzyApprovalsTests {
     @Test
     void approvals_verify_four_of_a_kind() {
         CombinationApprovals.verifyAllCombinations(
-            Yatzy::fourOfAKind,
+            (dice1, dice2, dice3, dice4, dice5) -> new Yatzy(dice1, dice2, dice3, dice4, dice5).fourOfAKind(),
             DICE_VALUES,
             DICE_VALUES,
             DICE_VALUES,
