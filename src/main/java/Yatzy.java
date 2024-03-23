@@ -31,34 +31,26 @@ public class Yatzy {
         return 0;
     }
 
-    public static int ones(int dice1, int dice2, int dice3, int dice4, int dice5) {
+    private static int count_number(int dice1, int dice2, int dice3, int dice4, int dice5, int countedValue) {
         int sum = 0;
-        if (dice1 == 1) sum += 1;
-        if (dice2 == 1) sum += 1;
-        if (dice3 == 1) sum += 1;
-        if (dice4 == 1) sum += 1;
-        if (dice5 == 1) sum += 1;
+        if (dice1 == countedValue) sum += countedValue;
+        if (dice2 == countedValue) sum += countedValue;
+        if (dice3 == countedValue) sum += countedValue;
+        if (dice4 == countedValue) sum += countedValue;
+        if (dice5 == countedValue) sum += countedValue;
         return sum;
+    }
+
+    public static int ones(int dice1, int dice2, int dice3, int dice4, int dice5) {
+        return count_number(dice1, dice2, dice3, dice4, dice5, 1);
     }
 
     public static int twos(int dice1, int dice2, int dice3, int dice4, int dice5) {
-        int sum = 0;
-        if (dice1 == 2) sum += 2;
-        if (dice2 == 2) sum += 2;
-        if (dice3 == 2) sum += 2;
-        if (dice4 == 2) sum += 2;
-        if (dice5 == 2) sum += 2;
-        return sum;
+        return count_number(dice1, dice2, dice3, dice4, dice5, 2);
     }
 
     public static int threes(int dice1, int dice2, int dice3, int dice4, int dice5) {
-        int sum = 0;
-        if (dice1 == 3) sum += 3;
-        if (dice2 == 3) sum += 3;
-        if (dice3 == 3) sum += 3;
-        if (dice4 == 3) sum += 3;
-        if (dice5 == 3) sum += 3;
-        return sum;
+        return count_number(dice1, dice2, dice3, dice4, dice5, 3);
     }
 
     public static int score_pair(int dice1, int dice2, int dice3, int dice4, int dice5) {
