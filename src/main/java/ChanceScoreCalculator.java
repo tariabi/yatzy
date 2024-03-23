@@ -7,7 +7,7 @@ public class ChanceScoreCalculator extends AbstractYatzyScoreCalculator {
     @Override
     public int computeScore() {
         int total = 0;
-        for (int die : dices) {
+        for (int die : dice) {
             total += die;
         }
         return total;

@@ -10,7 +10,7 @@ public class LargeStraightScoreCalculator extends AbstractYatzyScoreCalculator {
 
     @Override
     public int computeScore() {
-        int[] sorted = Arrays.stream(dices).sorted().toArray();
+        int[] sorted = Arrays.stream(dice).sorted().toArray();
         boolean isStraight = Arrays.equals(sorted, STRAIGHT);
         if (isStraight)
             return WIN_VALUE;

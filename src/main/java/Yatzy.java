@@ -1,88 +1,88 @@
 public class Yatzy {
 
-    private final int[] dices;
+    private final int[] dice;
 
     public Yatzy(int dice1, int dice2, int dice3, int dice4, int dice5) {
-        dices = new int[5];
-        dices[0] = dice1;
-        dices[1] = dice2;
-        dices[2] = dice3;
-        dices[3] = dice4;
-        dices[4] = dice5;
+        dice = new int[5];
+        dice[0] = dice1;
+        dice[1] = dice2;
+        dice[2] = dice3;
+        dice[3] = dice4;
+        dice[4] = dice5;
     }
 
     public int chance() {
-        var scoreCalculator = new ChanceScoreCalculator(dices);
+        var scoreCalculator = new ChanceScoreCalculator(dice);
         return scoreCalculator.computeScore();
     }
 
     public int yatzy() {
-        var scoreCalculator = new YatzyScoreCalculator(dices);
+        var scoreCalculator = new YatzyScoreCalculator(dice);
         return scoreCalculator.computeScore();
     }
 
     public int ones() {
-        var scoreCalculator = new CountScoreCalculator(dices, 1);
+        var scoreCalculator = new CountScoreCalculator(dice, 1);
         return scoreCalculator.computeScore();
     }
 
     public int twos() {
-        var scoreCalculator = new CountScoreCalculator(dices, 2);
+        var scoreCalculator = new CountScoreCalculator(dice, 2);
         return scoreCalculator.computeScore();
     }
 
     public int threes() {
-        var scoreCalculator = new CountScoreCalculator(dices, 3);
+        var scoreCalculator = new CountScoreCalculator(dice, 3);
         return scoreCalculator.computeScore();
     }
 
     public int scorePair() {
-        var scoreCalculator = new PairScoreCalculator(dices);
+        var scoreCalculator = new PairScoreCalculator(dice);
         return scoreCalculator.computeScore();
     }
 
     public int twoPair() {
-        var scoreCalculator = new TwoPairsScoreCalculator(dices);
+        var scoreCalculator = new TwoPairsScoreCalculator(dice);
         return scoreCalculator.computeScore();
     }
 
     public int fourOfAKind() {
-        var scoreCalculator = new ManyOfAKindScoreCalculator(dices, 4);
+        var scoreCalculator = new ManyOfAKindScoreCalculator(dice, 4);
         return scoreCalculator.computeScore();
     }
 
     public int threeOfAKind() {
-        var scoreCalculator = new ManyOfAKindScoreCalculator(dices, 3);
+        var scoreCalculator = new ManyOfAKindScoreCalculator(dice, 3);
         return scoreCalculator.computeScore();
     }
 
     public int smallStraight() {
-        var scoreCalculator = new SmallStraightScoreCalculator(dices);
+        var scoreCalculator = new SmallStraightScoreCalculator(dice);
         return scoreCalculator.computeScore();
     }
 
     public int largeStraight() {
-        var scoreCalculator = new LargeStraightScoreCalculator(dices);
+        var scoreCalculator = new LargeStraightScoreCalculator(dice);
         return scoreCalculator.computeScore();
     }
 
     public int fullHouse() {
-        var scoreCalculator = new FullHouseScoreCalculator(dices);
+        var scoreCalculator = new FullHouseScoreCalculator(dice);
         return scoreCalculator.computeScore();
     }
 
     public int fours() {
-        var scoreCalculator = new CountScoreCalculator(dices, 4);
+        var scoreCalculator = new CountScoreCalculator(dice, 4);
         return scoreCalculator.computeScore();
     }
 
     public int fives() {
-        var scoreCalculator = new CountScoreCalculator(dices, 5);
+        var scoreCalculator = new CountScoreCalculator(dice, 5);
         return scoreCalculator.computeScore();
     }
 
     public int sixes() {
-        var scoreCalculator = new CountScoreCalculator(dices, 6);
+        var scoreCalculator = new CountScoreCalculator(dice, 6);
         return scoreCalculator.computeScore();
     }
 }

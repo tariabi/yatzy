@@ -8,6 +8,6 @@ public class CountScoreCalculator extends AbstractYatzyScoreCalculator {
 
     @Override
     public int computeScore() {
-        return new ScoreUtils().countNumber(dices, countedValue);
+        return new ScoreUtils().countNumber(dice, countedValue);
     }
 }
