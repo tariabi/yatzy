@@ -36,16 +36,8 @@ public class Yatzy {
         return scoreCalculator.computeScore();
     }
 
-    private int[] buildIntArrayFromParametersList() {
-        int[] tallies = new int[6];
-        for (int die: dices) {
-            tallies[die - 1]++;
-        }
-        return tallies;
-    }
-
     public int scorePair() {
-        var tallies = buildIntArrayFromParametersList();
+        var tallies = new ScoreUtils().buildIntArrayFromParametersList(dices);
         for (int i = 0; i < tallies.length; i++)
             if (tallies[6 - i - 1] >= 2)
                 return (6 - i) * 2;
@@ -53,7 +45,7 @@ public class Yatzy {
     }
 
     public int twoPair() {
-        var tallies = buildIntArrayFromParametersList();
+        var tallies = new ScoreUtils().buildIntArrayFromParametersList(dices);
         int n = 0;
         int score = 0;
         for (int i = 0; i < tallies.length; i++)
@@ -68,7 +60,7 @@ public class Yatzy {
     }
 
     public int fourOfAKind() {
-        var tallies = buildIntArrayFromParametersList();
+        var tallies = new ScoreUtils().buildIntArrayFromParametersList(dices);
         for (int i = 0; i < tallies.length; i++)
             if (tallies[i] >= 4)
                 return (i + 1) * 4;
@@ -76,7 +68,7 @@ public class Yatzy {
     }
 
     public int threeOfAKind() {
-        var tallies = buildIntArrayFromParametersList();
+        var tallies = new ScoreUtils().buildIntArrayFromParametersList(dices);
         for (int i = 0; i < tallies.length; i++)
             if (tallies[i] >= 3)
                 return (i + 1) * 3;
@@ -84,7 +76,7 @@ public class Yatzy {
     }
 
     public int smallStraight() {
-        var tallies = buildIntArrayFromParametersList();
+        var tallies = new ScoreUtils().buildIntArrayFromParametersList(dices);
         for (int i = 0; i < tallies.length-1; i++) {
             if (tallies[i] != 1)
                 return 0;
@@ -93,7 +85,7 @@ public class Yatzy {
     }
 
     public int largeStraight() {
-        var tallies = buildIntArrayFromParametersList();
+        var tallies = new ScoreUtils().buildIntArrayFromParametersList(dices);
         for (int i = 1; i < tallies.length; i++) {
             if (tallies[i] != 1)
                 return 0;
@@ -102,7 +94,7 @@ public class Yatzy {
     }
 
     public int fullHouse() {
-        var tallies = buildIntArrayFromParametersList();
+        var tallies = new ScoreUtils().buildIntArrayFromParametersList(dices);
         boolean _2 = false;
         int _2_at = 0;
         boolean _3 = false;
