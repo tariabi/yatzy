@@ -115,57 +115,57 @@ public class YatzyTest {
 
     @Test
     void score_pair_34356_yields_6() {
-        assertEquals(6, Yatzy.score_pair(3, 4, 3, 5, 6));
+        assertEquals(6, Yatzy.scorePair(3, 4, 3, 5, 6));
     }
 
     @Test
     void score_pair_53335_yields_10() {
-        assertEquals(10, Yatzy.score_pair(5, 3, 3, 3, 5));
+        assertEquals(10, Yatzy.scorePair(5, 3, 3, 3, 5));
     }
 
     @Test
     void score_pair_53665_yields_12() {
-        assertEquals(12, Yatzy.score_pair(5, 3, 6, 6, 5));
+        assertEquals(12, Yatzy.scorePair(5, 3, 6, 6, 5));
     }
 
     @Test
     void two_pair_33545_yields_16() {
-        assertEquals(16, Yatzy.two_pair(3, 3, 5, 4, 5));
+        assertEquals(16, Yatzy.twoPair(3, 3, 5, 4, 5));
     }
 
     @Test
     void two_pair_33555_yields_16() {
-        assertEquals(16, Yatzy.two_pair(3, 3, 5, 5, 5));
+        assertEquals(16, Yatzy.twoPair(3, 3, 5, 5, 5));
     }
 
     @Test
     void three_of_a_kind_33345_yields_9() {
-        assertEquals(9, Yatzy.three_of_a_kind(3, 3, 3, 4, 5));
+        assertEquals(9, Yatzy.threeOfAKind(3, 3, 3, 4, 5));
     }
 
     @Test
     void three_of_a_kind_53545_yields_15() {
-        assertEquals(15, Yatzy.three_of_a_kind(5, 3, 5, 4, 5));
+        assertEquals(15, Yatzy.threeOfAKind(5, 3, 5, 4, 5));
     }
 
     @Test
     void three_of_a_kind_33335_yields_9() {
-        assertEquals(9, Yatzy.three_of_a_kind(3, 3, 3, 3, 5));
+        assertEquals(9, Yatzy.threeOfAKind(3, 3, 3, 3, 5));
     }
 
     @Test
     void four_of_a_kind_33335_yields_12() {
-        assertEquals(12, Yatzy.four_of_a_kind(3, 3, 3, 3, 5));
+        assertEquals(12, Yatzy.fourOfAKind(3, 3, 3, 3, 5));
     }
 
     @Test
     void four_of_a_kind_55545_yields_20() {
-        assertEquals(20, Yatzy.four_of_a_kind(5, 5, 5, 4, 5));
+        assertEquals(20, Yatzy.fourOfAKind(5, 5, 5, 4, 5));
     }
 
     @Test
     void four_of_a_kind_33333_yields_12() {
-        assertEquals(12, Yatzy.four_of_a_kind(3, 3, 3, 3, 3));
+        assertEquals(12, Yatzy.fourOfAKind(3, 3, 3, 3, 3));
     }
 
     @Test

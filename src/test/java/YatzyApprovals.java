@@ -99,7 +99,7 @@ public class YatzyApprovals {
     @Test
     void approvals_verify_score_pair() {
         CombinationApprovals.verifyAllCombinations(
-            Yatzy::score_pair,
+            Yatzy::scorePair,
             DICE_VALUES,
             DICE_VALUES,
             DICE_VALUES,
@@ -111,7 +111,7 @@ public class YatzyApprovals {
     @Test
     void approvals_verify_two_pair() {
         CombinationApprovals.verifyAllCombinations(
-            Yatzy::two_pair,
+            Yatzy::twoPair,
             DICE_VALUES,
             DICE_VALUES,
             DICE_VALUES,
@@ -123,7 +123,7 @@ public class YatzyApprovals {
     @Test
     void approvals_verify_three_of_a_kind() {
         CombinationApprovals.verifyAllCombinations(
-            Yatzy::three_of_a_kind,
+            Yatzy::threeOfAKind,
             DICE_VALUES,
             DICE_VALUES,
             DICE_VALUES,
@@ -135,7 +135,7 @@ public class YatzyApprovals {
     @Test
     void approvals_verify_four_of_a_kind() {
         CombinationApprovals.verifyAllCombinations(
-            Yatzy::four_of_a_kind,
+            Yatzy::fourOfAKind,
             DICE_VALUES,
             DICE_VALUES,
             DICE_VALUES,

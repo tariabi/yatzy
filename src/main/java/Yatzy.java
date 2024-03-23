@@ -31,7 +31,7 @@ public class Yatzy {
         return 0;
     }
 
-    private static int count_number(int dice1, int dice2, int dice3, int dice4, int dice5, int countedValue) {
+    private static int countNumber(int dice1, int dice2, int dice3, int dice4, int dice5, int countedValue) {
         int sum = 0;
         if (dice1 == countedValue) sum += countedValue;
         if (dice2 == countedValue) sum += countedValue;
@@ -42,15 +42,15 @@ public class Yatzy {
     }
 
     public static int ones(int dice1, int dice2, int dice3, int dice4, int dice5) {
-        return count_number(dice1, dice2, dice3, dice4, dice5, 1);
+        return countNumber(dice1, dice2, dice3, dice4, dice5, 1);
     }
 
     public static int twos(int dice1, int dice2, int dice3, int dice4, int dice5) {
-        return count_number(dice1, dice2, dice3, dice4, dice5, 2);
+        return countNumber(dice1, dice2, dice3, dice4, dice5, 2);
     }
 
     public static int threes(int dice1, int dice2, int dice3, int dice4, int dice5) {
-        return count_number(dice1, dice2, dice3, dice4, dice5, 3);
+        return countNumber(dice1, dice2, dice3, dice4, dice5, 3);
     }
 
     private static int[] buildIntArrayFromParametersList(int dice1, int dice2, int dice3, int dice4, int dice5) {
@@ -63,7 +63,7 @@ public class Yatzy {
         return tallies;
     }
 
-    public static int score_pair(int dice1, int dice2, int dice3, int dice4, int dice5) {
+    public static int scorePair(int dice1, int dice2, int dice3, int dice4, int dice5) {
         var tallies = buildIntArrayFromParametersList(dice1, dice2, dice3, dice4, dice5);
         for (int i = 0; i < tallies.length; i++)
             if (tallies[6 - i - 1] >= 2)
@@ -71,7 +71,7 @@ public class Yatzy {
         return 0;
     }
 
-    public static int two_pair(int dice1, int dice2, int dice3, int dice4, int dice5) {
+    public static int twoPair(int dice1, int dice2, int dice3, int dice4, int dice5) {
         var tallies = buildIntArrayFromParametersList(dice1, dice2, dice3, dice4, dice5);
         int n = 0;
         int score = 0;
@@ -86,7 +86,7 @@ public class Yatzy {
             return 0;
     }
 
-    public static int four_of_a_kind(int dice1, int dice2, int dice3, int dice4, int dice5) {
+    public static int fourOfAKind(int dice1, int dice2, int dice3, int dice4, int dice5) {
         var tallies = buildIntArrayFromParametersList(dice1, dice2, dice3, dice4, dice5);
         for (int i = 0; i < tallies.length; i++)
             if (tallies[i] >= 4)
@@ -94,7 +94,7 @@ public class Yatzy {
         return 0;
     }
 
-    public static int three_of_a_kind(int dice1, int dice2, int dice3, int dice4, int dice5) {
+    public static int threeOfAKind(int dice1, int dice2, int dice3, int dice4, int dice5) {
         var tallies = buildIntArrayFromParametersList(dice1, dice2, dice3, dice4, dice5);
         for (int i = 0; i < tallies.length; i++)
             if (tallies[i] >= 3)
