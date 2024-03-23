@@ -1,11 +1,8 @@
-public class ManyOfAKindScoreCalculator implements IYatzyScoreCalculator {
-
-    private final int[] dices;
-
+public class ManyOfAKindScoreCalculator extends AbstractYatzyScoreCalculator {
     private final int searchedValue;
 
     public ManyOfAKindScoreCalculator(int[] dices, int searchedValue) {
-        this.dices = dices;
+        super(dices);
         this.searchedValue = searchedValue;
     }
 

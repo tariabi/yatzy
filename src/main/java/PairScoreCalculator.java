@@ -1,9 +1,6 @@
-public class PairScoreCalculator implements IYatzyScoreCalculator {
-
-    private final int[] dices;
-
+public class PairScoreCalculator extends AbstractYatzyScoreCalculator {
     public PairScoreCalculator(int[] dices) {
-        this.dices = dices;
+        super(dices);
     }
 
     @Override

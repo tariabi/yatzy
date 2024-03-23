@@ -1,7 +1,7 @@
-public class YatzyScoreCalculator implements IYatzyScoreCalculator {
-    private final int[] dices;
+public class YatzyScoreCalculator extends AbstractYatzyScoreCalculator {
+
     public YatzyScoreCalculator(int[] dices) {
-        this.dices = dices;
+        super(dices);
     }
     @Override
     public int computeScore() {

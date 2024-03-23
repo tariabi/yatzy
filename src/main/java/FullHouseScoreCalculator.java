@@ -1,9 +1,7 @@
-public class FullHouseScoreCalculator implements IYatzyScoreCalculator {
-
-    private final int[] dices;
+public class FullHouseScoreCalculator extends AbstractYatzyScoreCalculator {
 
     public FullHouseScoreCalculator(int[] dices) {
-        this.dices = dices;
+        super(dices);
     }
 
     @Override
