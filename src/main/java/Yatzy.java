@@ -105,13 +105,11 @@ public class Yatzy {
 
     public static int smallStraight(int dice1, int dice2, int dice3, int dice4, int dice5) {
         var tallies = buildIntArrayFromParametersList(dice1, dice2, dice3, dice4, dice5);
-        if (tallies[0] == 1 &&
-            tallies[1] == 1 &&
-            tallies[2] == 1 &&
-            tallies[3] == 1 &&
-            tallies[4] == 1)
-            return 15;
-        return 0;
+        for (int i = 0; i < tallies.length-1; i++) {
+            if (tallies[i] != 1)
+                return 0;
+        }
+        return 15;
     }
 
     public static int largeStraight(int dice1, int dice2, int dice3, int dice4, int dice5) {
