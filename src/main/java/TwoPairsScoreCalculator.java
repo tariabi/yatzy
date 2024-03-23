@@ -1,11 +1,11 @@
 public class TwoPairsScoreCalculator extends AbstractYatzyScoreCalculator {
-    public TwoPairsScoreCalculator(int[] dices) {
-        super(dices);
+    public TwoPairsScoreCalculator(DiceRolls diceRolls) {
+        super(diceRolls);
     }
 
     @Override
     public int computeScore() {
-        var tallies = new ScoreUtils().buildIntArrayFromParametersList(dice);
+        var tallies = new ScoreUtils().buildIntArrayFromParametersList(dice.getRolls());
         int n = 0;
         int score = 0;
         for (int i = 0; i < tallies.length; i++)

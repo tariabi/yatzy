@@ -1,14 +1,16 @@
 public class Yatzy {
 
-    private final int[] dice;
+    private final DiceRolls dice;
 
     public Yatzy(int dice1, int dice2, int dice3, int dice4, int dice5) {
-        dice = new int[5];
-        dice[0] = dice1;
-        dice[1] = dice2;
-        dice[2] = dice3;
-        dice[3] = dice4;
-        dice[4] = dice5;
+        dice = new DiceRolls(
+            new DieRoll[]{new DieRoll(dice1),
+            new DieRoll(dice2),
+            new DieRoll(dice3),
+            new DieRoll(dice4),
+            new DieRoll(dice5)}
+        );
+
     }
 
     public int chance() {
