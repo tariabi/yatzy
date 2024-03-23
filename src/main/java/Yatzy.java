@@ -54,30 +54,30 @@ public class Yatzy {
     }
 
     public static int score_pair(int dice1, int dice2, int dice3, int dice4, int dice5) {
-        int[] counts = new int[6];
-        counts[dice1 - 1]++;
-        counts[dice2 - 1]++;
-        counts[dice3 - 1]++;
-        counts[dice4 - 1]++;
-        counts[dice5 - 1]++;
+        int[] tallies = new int[6];
+        tallies[dice1 - 1]++;
+        tallies[dice2 - 1]++;
+        tallies[dice3 - 1]++;
+        tallies[dice4 - 1]++;
+        tallies[dice5 - 1]++;
         int at;
         for (at = 0; at != 6; at++)
-            if (counts[6 - at - 1] >= 2)
+            if (tallies[6 - at - 1] >= 2)
                 return (6 - at) * 2;
         return 0;
     }
 
     public static int two_pair(int dice1, int dice2, int dice3, int dice4, int dice5) {
-        int[] counts = new int[6];
-        counts[dice1 - 1]++;
-        counts[dice2 - 1]++;
-        counts[dice3 - 1]++;
-        counts[dice4 - 1]++;
-        counts[dice5 - 1]++;
+        int[] tallies = new int[6];
+        tallies[dice1 - 1]++;
+        tallies[dice2 - 1]++;
+        tallies[dice3 - 1]++;
+        tallies[dice4 - 1]++;
+        tallies[dice5 - 1]++;
         int n = 0;
         int score = 0;
         for (int i = 0; i < 6; i += 1)
-            if (counts[6 - i - 1] >= 2) {
+            if (tallies[6 - i - 1] >= 2) {
                 n++;
                 score += (6 - i);
             }
@@ -88,8 +88,7 @@ public class Yatzy {
     }
 
     public static int four_of_a_kind(int dice1, int dice2, int dice3, int dice4, int dice5) {
-        int[] tallies;
-        tallies = new int[6];
+        int[] tallies = new int[6];
         tallies[dice1 - 1]++;
         tallies[dice2 - 1]++;
         tallies[dice3 - 1]++;
@@ -102,22 +101,20 @@ public class Yatzy {
     }
 
     public static int three_of_a_kind(int dice1, int dice2, int dice3, int dice4, int dice5) {
-        int[] t;
-        t = new int[6];
-        t[dice1 - 1]++;
-        t[dice2 - 1]++;
-        t[dice3 - 1]++;
-        t[dice4 - 1]++;
-        t[dice5 - 1]++;
+        int[] tallies = new int[6];
+        tallies[dice1 - 1]++;
+        tallies[dice2 - 1]++;
+        tallies[dice3 - 1]++;
+        tallies[dice4 - 1]++;
+        tallies[dice5 - 1]++;
         for (int i = 0; i < 6; i++)
-            if (t[i] >= 3)
+            if (tallies[i] >= 3)
                 return (i + 1) * 3;
         return 0;
     }
 
     public static int smallStraight(int dice1, int dice2, int dice3, int dice4, int dice5) {
-        int[] tallies;
-        tallies = new int[6];
+        int[] tallies = new int[6];
         tallies[dice1 - 1] += 1;
         tallies[dice2 - 1] += 1;
         tallies[dice3 - 1] += 1;
@@ -133,8 +130,7 @@ public class Yatzy {
     }
 
     public static int largeStraight(int dice1, int dice2, int dice3, int dice4, int dice5) {
-        int[] tallies;
-        tallies = new int[6];
+        int[] tallies = new int[6];
         tallies[dice1 - 1] += 1;
         tallies[dice2 - 1] += 1;
         tallies[dice3 - 1] += 1;
@@ -150,20 +146,17 @@ public class Yatzy {
     }
 
     public static int fullHouse(int dice1, int dice2, int dice3, int dice4, int dice5) {
-        int[] tallies;
-        boolean _2 = false;
-        int i;
-        int _2_at = 0;
-        boolean _3 = false;
-        int _3_at = 0;
-
-
-        tallies = new int[6];
+        int[] tallies = new int[6];
         tallies[dice1 - 1] += 1;
         tallies[dice2 - 1] += 1;
         tallies[dice3 - 1] += 1;
         tallies[dice4 - 1] += 1;
         tallies[dice5 - 1] += 1;
+        boolean _2 = false;
+        int i;
+        int _2_at = 0;
+        boolean _3 = false;
+        int _3_at = 0;
 
         for (i = 0; i != 6; i += 1)
             if (tallies[i] == 2) {
