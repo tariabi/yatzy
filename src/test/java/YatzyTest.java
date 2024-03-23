@@ -15,17 +15,17 @@ public class YatzyTest {
 
     @Test
     void yatzy_44444_yields_50() {
-        assertEquals(50, Yatzy.yatzy(4, 4, 4, 4, 4));
+        assertEquals(50, new Yatzy(4, 4, 4, 4, 4).yatzy());
     }
 
     @Test
     void yatzy_66666_yields_50() {
-        assertEquals(50, Yatzy.yatzy(6, 6, 6, 6, 6));
+        assertEquals(50, new Yatzy(6, 6, 6, 6, 6).yatzy());
     }
 
     @Test
     void yatzy_66663_yields_0() {
-        assertEquals(0, Yatzy.yatzy(6, 6, 6, 6, 3));
+        assertEquals(0, new Yatzy(6, 6, 6, 6, 3).yatzy());
     }
 
     @Test

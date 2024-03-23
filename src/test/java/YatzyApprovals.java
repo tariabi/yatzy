@@ -19,7 +19,8 @@ public class YatzyApprovals {
 
     @Test
     void approvals_verify_yatzy() {
-        CombinationApprovals.verifyAllCombinations(Yatzy::yatzy,
+        CombinationApprovals.verifyAllCombinations(
+            (dice1, dice2, dice3, dice4, dice5) -> new Yatzy(dice1, dice2, dice3, dice4, dice5).yatzy(),
             DICE_VALUES,
             DICE_VALUES,
             DICE_VALUES,
