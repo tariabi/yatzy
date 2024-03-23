@@ -60,19 +60,13 @@ public class Yatzy {
     }
 
     public int fourOfAKind() {
-        var tallies = new ScoreUtils().buildIntArrayFromParametersList(dices);
-        for (int i = 0; i < tallies.length; i++)
-            if (tallies[i] >= 4)
-                return (i + 1) * 4;
-        return 0;
+        var scoreCalculator = new ManyOfAKindScoreCalculator(dices, 4);
+        return scoreCalculator.computeScore();
     }
 
     public int threeOfAKind() {
-        var tallies = new ScoreUtils().buildIntArrayFromParametersList(dices);
-        for (int i = 0; i < tallies.length; i++)
-            if (tallies[i] >= 3)
-                return (i + 1) * 3;
-        return 0;
+        var scoreCalculator = new ManyOfAKindScoreCalculator(dices, 3);
+        return scoreCalculator.computeScore();
     }
 
     public int smallStraight() {
