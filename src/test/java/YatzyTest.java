@@ -30,22 +30,22 @@ public class YatzyTest {
 
     @Test
     void ones_12345_yields_1() {
-        assertEquals(1, Yatzy.ones(1, 2, 3, 4, 5));
+        assertEquals(1, new Yatzy(1, 2, 3, 4, 5).ones());
     }
 
     @Test
     void ones_12145_yields_2() {
-        assertEquals(2, Yatzy.ones(1, 2, 1, 4, 5));
+        assertEquals(2, new Yatzy(1, 2, 1, 4, 5).ones());
     }
 
     @Test
     void ones_62245_yields_0() {
-        assertEquals(0, Yatzy.ones(6, 2, 2, 4, 5));
+        assertEquals(0, new Yatzy(6, 2, 2, 4, 5).ones());
     }
 
     @Test
     void ones_12111_yields_4() {
-        assertEquals(4, Yatzy.ones(1, 2, 1, 1, 1));
+        assertEquals(4, new Yatzy(1, 2, 1, 1, 1).ones());
     }
 
     @Test
