@@ -151,30 +151,26 @@ public class Yatzy {
             return 0;
     }
 
-    public int fours() {
+    private int computeSumOf(int countedValue) {
         int sum = 0;
         for (int die : dice) {
-            if (die == 4) {
-                sum += 4;
+            if (die == countedValue) {
+                sum += countedValue;
             }
         }
         return sum;
     }
 
+    public int fours() {
+        return computeSumOf(4);
+    }
+
     public int fives() {
-        int sum = 0;
-        for (int die : dice)
-            if (die == 5)
-                sum += 5;
-        return sum;
+        return computeSumOf(5);
     }
 
     public int sixes() {
-        int sum = 0;
-        for (int die : dice)
-            if (die == 6)
-                sum = sum + 6;
-        return sum;
+        return computeSumOf(6);
     }
 }
 
