@@ -115,17 +115,17 @@ public class YatzyTest {
 
     @Test
     void score_pair_34356_yields_6() {
-        assertEquals(6, Yatzy.scorePair(3, 4, 3, 5, 6));
+        assertEquals(6, new Yatzy(3, 4, 3, 5, 6).scorePair());
     }
 
     @Test
     void score_pair_53335_yields_10() {
-        assertEquals(10, Yatzy.scorePair(5, 3, 3, 3, 5));
+        assertEquals(10, new Yatzy(5, 3, 3, 3, 5).scorePair());
     }
 
     @Test
     void score_pair_53665_yields_12() {
-        assertEquals(12, Yatzy.scorePair(5, 3, 6, 6, 5));
+        assertEquals(12, new Yatzy(5, 3, 6, 6, 5).scorePair());
     }
 
     @Test

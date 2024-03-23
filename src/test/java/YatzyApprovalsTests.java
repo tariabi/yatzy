@@ -104,7 +104,7 @@ public class YatzyApprovalsTests {
     @Test
     void approvals_verify_score_pair() {
         CombinationApprovals.verifyAllCombinations(
-            Yatzy::scorePair,
+            (dice1, dice2, dice3, dice4, dice5) -> new Yatzy(dice1, dice2, dice3, dice4, dice5).scorePair(),
             DICE_VALUES,
             DICE_VALUES,
             DICE_VALUES,
