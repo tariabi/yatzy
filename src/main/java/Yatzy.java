@@ -12,11 +12,8 @@ public class Yatzy {
     }
 
     public int chance() {
-        int total = 0;
-        for (int die : dices) {
-            total += die;
-        }
-        return total;
+        var scoreCalculator = new ChanceScoreCalculator(this.dices);
+        return scoreCalculator.computeScore();
     }
 
     public int yatzy() {
