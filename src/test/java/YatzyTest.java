@@ -170,17 +170,17 @@ public class YatzyTest {
 
     @Test
     void smallStraight_12345_yields_15() {
-        assertEquals(15, Yatzy.smallStraight(1, 2, 3, 4, 5));
+        assertEquals(15, new Yatzy(1, 2, 3, 4, 5).smallStraight());
     }
 
     @Test
     void smallStraight_23451_yields_15() {
-        assertEquals(15, Yatzy.smallStraight(2, 3, 4, 5, 1));
+        assertEquals(15, new Yatzy(2, 3, 4, 5, 1).smallStraight());
     }
 
     @Test
     void smallStraight_12245_yields_0() {
-        assertEquals(0, Yatzy.smallStraight(1, 2, 2, 4, 5));
+        assertEquals(0, new Yatzy(1, 2, 2, 4, 5).smallStraight());
     }
 
     @Test
