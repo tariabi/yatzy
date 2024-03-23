@@ -115,15 +115,18 @@ public class Yatzy {
     }
 
     public int fours() {
-        return computeSumOf(4);
+        var scoreCalculator = new CountScoreCalculator(dices, 4);
+        return scoreCalculator.computeScore();
     }
 
     public int fives() {
-        return computeSumOf(5);
+        var scoreCalculator = new CountScoreCalculator(dices, 5);
+        return scoreCalculator.computeScore();
     }
 
     public int sixes() {
-        return computeSumOf(6);
+        var scoreCalculator = new CountScoreCalculator(dices, 6);
+        return scoreCalculator.computeScore();
     }
 }
 
