@@ -65,10 +65,9 @@ public class Yatzy {
 
     public static int score_pair(int dice1, int dice2, int dice3, int dice4, int dice5) {
         var tallies = buildIntArrayFromParametersList(dice1, dice2, dice3, dice4, dice5);
-        int at;
-        for (at = 0; at != 6; at++)
-            if (tallies[6 - at - 1] >= 2)
-                return (6 - at) * 2;
+        for (int i = 0; i < tallies.length; i++)
+            if (tallies[6 - i - 1] >= 2)
+                return (6 - i) * 2;
         return 0;
     }
 
