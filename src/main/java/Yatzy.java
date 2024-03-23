@@ -67,8 +67,8 @@ public class Yatzy {
         return 0;
     }
 
-    public static int twoPair(int dice1, int dice2, int dice3, int dice4, int dice5) {
-        var tallies = buildIntArrayFromParametersList(dice1, dice2, dice3, dice4, dice5);
+    public int twoPair() {
+        var tallies = buildIntArrayFromParametersList(dice[0], dice[1], dice[2], dice[3], dice[4]);
         int n = 0;
         int score = 0;
         for (int i = 0; i < tallies.length; i++)

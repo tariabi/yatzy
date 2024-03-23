@@ -130,12 +130,12 @@ public class YatzyTest {
 
     @Test
     void two_pair_33545_yields_16() {
-        assertEquals(16, Yatzy.twoPair(3, 3, 5, 4, 5));
+        assertEquals(16, new Yatzy(3, 3, 5, 4, 5).twoPair());
     }
 
     @Test
     void two_pair_33555_yields_16() {
-        assertEquals(16, Yatzy.twoPair(3, 3, 5, 5, 5));
+        assertEquals(16, new Yatzy(3, 3, 5, 5, 5).twoPair());
     }
 
     @Test
