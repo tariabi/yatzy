@@ -21,26 +21,19 @@ public class Yatzy {
         return scoreCalculator.computeScore();
     }
 
-    private int countNumber(int countedValue) {
-        int sum = 0;
-        if (dices[0] == countedValue) sum += countedValue;
-        if (dices[1] == countedValue) sum += countedValue;
-        if (dices[2] == countedValue) sum += countedValue;
-        if (dices[3] == countedValue) sum += countedValue;
-        if (dices[4] == countedValue) sum += countedValue;
-        return sum;
-    }
-
     public int ones() {
-        return countNumber(1);
+        var scoreCalculator = new CountScoreCalculator(dices, 1);
+        return scoreCalculator.computeScore();
     }
 
     public int twos() {
-        return countNumber(2);
+        var scoreCalculator = new CountScoreCalculator(dices, 2);
+        return scoreCalculator.computeScore();
     }
 
     public int threes() {
-        return countNumber(3);
+        var scoreCalculator = new CountScoreCalculator(dices, 3);
+        return scoreCalculator.computeScore();
     }
 
     private int[] buildIntArrayFromParametersList() {
