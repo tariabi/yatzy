@@ -21,12 +21,10 @@ public class Yatzy {
         return total;
     }
 
-    public static int yatzy(int... dice) {
-        int[] counts = new int[6];
-        for (int die : dice)
-            counts[die - 1]++;
-        for (int i = 0; i != 6; i++)
-            if (counts[i] == 5)
+    public static int yatzy(int dice1, int dice2, int dice3, int dice4, int dice5) {
+        var tallies = buildIntArrayFromParametersList(dice1, dice2, dice3, dice4, dice5);
+        for (int i = 0; i < tallies.length; i++)
+            if (tallies[i] == 5)
                 return 50;
         return 0;
     }
