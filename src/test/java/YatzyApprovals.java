@@ -82,4 +82,21 @@ public class YatzyApprovals {
             diceValues5
         );
     }
+
+    @Test
+    void approvals_verify_fours() {
+        var diceValues1 = new Integer[]{1,2,3,4,5,6};
+        var diceValues2 = new Integer[]{1,2,3,4,5,6};
+        var diceValues3 = new Integer[]{1,2,3,4,5,6};
+        var diceValues4 = new Integer[]{1,2,3,4,5,6};
+        var diceValues5 = new Integer[]{1,2,3,4,5,6};
+        CombinationApprovals.verifyAllCombinations(
+            (dice1, dice2, dice3, dice4, dice5) -> new Yatzy(dice1, dice2, dice3, dice4, dice5).fours(),
+            diceValues1,
+            diceValues2,
+            diceValues3,
+            diceValues4,
+            diceValues5
+        );
+    }
 }
