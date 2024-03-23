@@ -1,8 +1,6 @@
 package model;
 
-public class DieRoll {
-    private final int roll;
-
+public record DieRoll(int roll) {
     public DieRoll(int roll) {
         if (roll >= 1 && roll <= 6) {
             this.roll = roll;
