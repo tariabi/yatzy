@@ -33,13 +33,11 @@ public class Yatzy {
 
     public static int ones(int dice1, int dice2, int dice3, int dice4, int dice5) {
         int sum = 0;
-        if (dice1 == 1) sum++;
-        if (dice2 == 1) sum++;
-        if (dice3 == 1) sum++;
-        if (dice4 == 1) sum++;
-        if (dice5 == 1)
-            sum++;
-
+        if (dice1 == 1) sum += 1;
+        if (dice2 == 1) sum += 1;
+        if (dice3 == 1) sum += 1;
+        if (dice4 == 1) sum += 1;
+        if (dice5 == 1) sum += 1;
         return sum;
     }
 
