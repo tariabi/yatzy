@@ -23,11 +23,9 @@ public class DiceRolls {
 
     public int countNumber(int countedValue) {
         int sum = 0;
-        if (rolls[0].toNumber() == countedValue) sum += countedValue;
-        if (rolls[1].toNumber() == countedValue) sum += countedValue;
-        if (rolls[2].toNumber() == countedValue) sum += countedValue;
-        if (rolls[3].toNumber() == countedValue) sum += countedValue;
-        if (rolls[4].toNumber() == countedValue) sum += countedValue;
+        for (DieRoll dieRoll : rolls)
+            if (dieRoll.toNumber() == countedValue)
+                sum += countedValue;
         return sum;
     }
 
