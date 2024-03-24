@@ -12,7 +12,7 @@ public class ChanceScoreCalculator extends AbstractYatzyScoreCalculator {
     @Override
     public int computeScore() {
         int total = 0;
-        for (DieRoll die : dice.getRolls()) {
+        for (DieRoll die : dice.rolls()) {
             total += die.toNumber();
         }
         return total;
