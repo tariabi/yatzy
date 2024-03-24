@@ -1,6 +1,9 @@
 package calculator;
 
 import model.DiceRolls;
+import model.DieRoll;
+
+import java.util.Map;
 
 public class TwoPairsScoreCalculator extends AbstractYatzyScoreCalculator {
     public TwoPairsScoreCalculator(DiceRolls diceRolls) {
@@ -9,17 +12,17 @@ public class TwoPairsScoreCalculator extends AbstractYatzyScoreCalculator {
 
     @Override
     public int computeScore() {
-        var tallies = dice.buildRollsOccurrenceList();
-        int n = 0;
-        int score = 0;
-        for (int i = 0; i < tallies.size(); i++)
-            if (tallies.get(6 - i - 1) >= 2) {
-                n++;
-                score += (6 - i);
+        var map = dice.buildRollsOccurrenceMap();
+        int pairRolls = 0;
+        int pairs = 0;
+        for(Map.Entry<DieRoll, Integer> entry : map.entrySet()) {
+            if (entry.getValue() >= 2) {
+                pairs++;
+                pairRolls += entry.getKey().toNumber();
             }
-        if (n == 2)
-            return score * 2;
-        else
-            return 0;
+        }
+        if (pairs == 2)
+            return 2 * pairRolls;
+        return 0;
     }
 }
