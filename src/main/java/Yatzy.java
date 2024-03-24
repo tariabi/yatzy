@@ -6,13 +6,7 @@ public class Yatzy {
     private final DiceRolls dice;
 
     public Yatzy(int dice1, int dice2, int dice3, int dice4, int dice5) {
-        dice = new DiceRolls(
-            new DieRoll[]{new DieRoll(dice1),
-            new DieRoll(dice2),
-            new DieRoll(dice3),
-            new DieRoll(dice4),
-            new DieRoll(dice5)}
-        );
+        dice = DiceRolls.fromRolls(dice1, dice2, dice3, dice4, dice5);
     }
 
     public int chance() {
