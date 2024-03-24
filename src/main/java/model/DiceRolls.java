@@ -3,7 +3,7 @@ package model;
 import java.util.*;
 
 public record DiceRolls(DieRoll[] rolls) {
-    private static final int NUMBER_OF_DIE_ROLLS = 5;
+    public static final int NUMBER_OF_DIE_ROLLS = 5;
 
     public int[] getSortedRollValues() {
         int[] values = new int[rolls.length];
@@ -38,5 +38,12 @@ public record DiceRolls(DieRoll[] rolls) {
         for (int i = 0; i < rolls.length; i++)
             tempRolls[i] = new DieRoll(rolls[i]);
         return new DiceRolls(tempRolls);
+    }
+
+    public int sumRolls() {
+        int sum = 0;
+        for (DieRoll die : rolls())
+            sum += die.toNumber();
+        return sum;
     }
 }

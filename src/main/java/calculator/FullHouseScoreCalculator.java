@@ -14,9 +14,8 @@ public class FullHouseScoreCalculator extends AbstractYatzyScoreCalculator {
     @Override
     public int computeScore() {
         var map = dice.buildRollsOccurrenceMap();
-        if (map.containsValue(3) && map.containsValue(2)) {
-            return Arrays.stream(dice.rolls()).map(DieRoll::toNumber).reduce(0, Integer::sum);
-        }
+        if (map.containsValue(3) && map.containsValue(2))
+            return dice.sumRolls();
         return 0;
     }
 }
