@@ -1,17 +1,10 @@
 package model;
 
 import java.util.*;
+import java.util.stream.Stream;
 
 public record DiceRolls(DieRoll[] rolls) {
     public static final int NUMBER_OF_DIE_ROLLS = 5;
-
-    public int[] getSortedRollValues() {
-        int[] values = new int[rolls.length];
-        for (int i = 0; i < rolls.length; i++) {
-            values[i] = rolls[i].toNumber();
-        }
-        return Arrays.stream(values).sorted().toArray();
-    }
 
     public int countNumber(int countedValue) {
         int sum = 0;
@@ -45,5 +38,21 @@ public record DiceRolls(DieRoll[] rolls) {
         for (DieRoll die : rolls())
             sum += die.toNumber();
         return sum;
+    }
+
+    public boolean isSequence() {
+        var rollValues = arrayRollValues();
+        Arrays.sort(rollValues);
+        return Arrays.equals(rollValues, new int[] {1,2,3,4,5})
+        || Arrays.equals(rollValues, new int[] {2,3,4,5,6});
+    }
+
+    private int[] arrayRollValues() {
+        int[] arrayRollValues = new int[NUMBER_OF_DIE_ROLLS];
+        int index = 0;
+        for(DieRoll roll: rolls) {
+            arrayRollValues[index++] = roll.toNumber();
+        }
+        return arrayRollValues;
     }
 }
