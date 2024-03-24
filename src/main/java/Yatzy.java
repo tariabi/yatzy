@@ -33,6 +33,21 @@ public class Yatzy {
         return scoreCalculator.computeScore();
     }
 
+    public int fours() {
+        var scoreCalculator = new CountScoreCalculator(dice, 4);
+        return scoreCalculator.computeScore();
+    }
+
+    public int fives() {
+        var scoreCalculator = new CountScoreCalculator(dice, 5);
+        return scoreCalculator.computeScore();
+    }
+
+    public int sixes() {
+        var scoreCalculator = new CountScoreCalculator(dice, 6);
+        return scoreCalculator.computeScore();
+    }
+
     public int scorePair() {
         var scoreCalculator = new PairScoreCalculator(dice);
         return scoreCalculator.computeScore();
@@ -65,21 +80,6 @@ public class Yatzy {
 
     public int fullHouse() {
         var scoreCalculator = new FullHouseScoreCalculator(dice);
-        return scoreCalculator.computeScore();
-    }
-
-    public int fours() {
-        var scoreCalculator = new CountScoreCalculator(dice, 4);
-        return scoreCalculator.computeScore();
-    }
-
-    public int fives() {
-        var scoreCalculator = new CountScoreCalculator(dice, 5);
-        return scoreCalculator.computeScore();
-    }
-
-    public int sixes() {
-        var scoreCalculator = new CountScoreCalculator(dice, 6);
         return scoreCalculator.computeScore();
     }
 }
