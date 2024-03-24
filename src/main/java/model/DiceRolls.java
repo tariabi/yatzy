@@ -31,23 +31,6 @@ public class DiceRolls {
         return sum;
     }
 
-    private int[] buildRollsOccurrenceArray() {
-        int[] tallies = new int[6];
-        for (DieRoll die: rolls) {
-            tallies[die.toNumber() - 1]++;
-        }
-        return tallies;
-    }
-
-    public List<Integer> buildRollsOccurrenceList() {
-        var rollsOccurrenceArray = buildRollsOccurrenceArray();
-        var result = new ArrayList<Integer>();
-        for (int occurrences : rollsOccurrenceArray) {
-            result.add(occurrences);
-        }
-        return result;
-    }
-
     public Map<DieRoll, Integer> buildRollsOccurrenceMap() {
         Map<DieRoll, Integer> map = new HashMap<>();
         for (DieRoll dieRoll: rolls) {
