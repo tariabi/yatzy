@@ -3,6 +3,7 @@ package model;
 import java.util.*;
 
 public record DiceRolls(DieRoll[] rolls) {
+    private static final int NUMBER_OF_DIE_ROLLS = 5;
 
     public int[] getSortedRollValues() {
         int[] values = new int[rolls.length];
@@ -31,9 +32,9 @@ public record DiceRolls(DieRoll[] rolls) {
     }
 
     public static DiceRolls fromRolls(int... rolls) {
-        if (rolls.length != 5)
-            throw new IllegalArgumentException("You must provide exactly 5 rolls");
-        DieRoll[] tempRolls = new DieRoll[5];
+        if (rolls.length != NUMBER_OF_DIE_ROLLS)
+            throw new IllegalArgumentException(String.format("You must provide exactly %d rolls", NUMBER_OF_DIE_ROLLS));
+        DieRoll[] tempRolls = new DieRoll[NUMBER_OF_DIE_ROLLS];
         for (int i = 0; i < rolls.length; i++)
             tempRolls[i] = new DieRoll(rolls[i]);
         return new DiceRolls(tempRolls);
