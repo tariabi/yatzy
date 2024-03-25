@@ -1,9 +1,6 @@
 package calculator;
 
 import model.DiceRolls;
-import model.DieRoll;
-
-import java.util.Arrays;
 
 public class FullHouseScoreCalculator extends AbstractYatzyScoreCalculator {
 

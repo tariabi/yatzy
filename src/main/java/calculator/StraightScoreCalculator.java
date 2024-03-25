@@ -2,8 +2,6 @@ package calculator;
 
 import model.DiceRolls;
 
-import java.util.Arrays;
-
 public abstract class StraightScoreCalculator extends AbstractYatzyScoreCalculator {
 
     protected abstract int winValue();
