@@ -55,13 +55,6 @@ public record DiceRolls(DieRoll[] rolls) {
         return arrayRollValues;
     }
 
-    public Optional<DieRoll> findRollWithOccurrences(int rollOccurrences) {
-        var dieRoll = buildRollsOccurrenceMap().entrySet().stream()
-            .filter(entry -> entry.getValue() >= rollOccurrences)
-            .findAny();
-        return dieRoll.map(Map.Entry::getKey);
-    }
-
     public List<DieRoll> findRollsWithOccurrences(int rollOccurrences) {
        return new ArrayList<>(buildRollsOccurrenceMap().entrySet().stream()
             .filter(entry -> entry.getValue() >= rollOccurrences)

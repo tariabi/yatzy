@@ -1,6 +1,7 @@
 package calculator;
 
 import model.DiceRolls;
+import model.DieRoll;
 
 public class ManyOfAKindScoreCalculator extends AbstractYatzyScoreCalculator {
     private final int rollOccurrences;
@@ -11,8 +12,8 @@ public class ManyOfAKindScoreCalculator extends AbstractYatzyScoreCalculator {
     }
     @Override
     public int computeScore() {
-        return dice.findRollWithOccurrences(rollOccurrences)
-            .map(dieRoll -> dieRoll.toNumber() * rollOccurrences)
-            .orElse(0);
+        var sum = dice.findRollsWithOccurrences(rollOccurrences)
+            .stream().mapToInt(DieRoll::toNumber).sum();
+        return sum * rollOccurrences;
     }
 }
