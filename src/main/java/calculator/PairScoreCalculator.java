@@ -3,7 +3,7 @@ package calculator;
 import model.DiceRolls;
 import model.DieRoll;
 
-import java.util.Map;
+import java.util.Comparator;
 
 public class PairScoreCalculator extends AbstractYatzyScoreCalculator {
     public PairScoreCalculator(DiceRolls diceRolls) {
@@ -12,13 +12,12 @@ public class PairScoreCalculator extends AbstractYatzyScoreCalculator {
 
     @Override
     public int computeScore() {
-        var map = dice.buildRollsOccurrenceMap();
-        int pairRoll = 0;
-        for(Map.Entry<DieRoll, Integer> entry : map.entrySet()) {
-           if (entry.getValue() >= 2 && entry.getKey().toNumber() > pairRoll) {
-               pairRoll = entry.getKey().toNumber();
-           }
+        var allPairs = dice.findRollsWithOccurrences(2);
+        if (!allPairs.isEmpty()) {
+            allPairs.sort(Comparator.comparingInt(DieRoll::toNumber).reversed());
+            var highestPair = allPairs.get(0);
+            return 2 * highestPair.toNumber();
         }
-        return 2 * pairRoll;
+        return 0;
     }
 }

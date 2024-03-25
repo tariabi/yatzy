@@ -61,4 +61,10 @@ public record DiceRolls(DieRoll[] rolls) {
             .findAny();
         return dieRoll.map(Map.Entry::getKey);
     }
+
+    public List<DieRoll> findRollsWithOccurrences(int rollOccurrences) {
+       return new ArrayList<>(buildRollsOccurrenceMap().entrySet().stream()
+            .filter(entry -> entry.getValue() >= rollOccurrences)
+            .map(Map.Entry::getKey).toList());
+    }
 }
