@@ -1,26 +1,18 @@
 package calculator;
 
 import model.DiceRolls;
-import model.DieRoll;
-
-import java.util.Map;
 
 public class ManyOfAKindScoreCalculator extends AbstractYatzyScoreCalculator {
-    private final int searchedValue;
+    private final int rollOccurrences;
 
-    public ManyOfAKindScoreCalculator(DiceRolls diceRolls, int searchedValue) {
+    public ManyOfAKindScoreCalculator(DiceRolls diceRolls, int rollOccurrences) {
         super(diceRolls);
-        this.searchedValue = searchedValue;
+        this.rollOccurrences = rollOccurrences;
     }
     @Override
     public int computeScore() {
-        var map = dice.buildRollsOccurrenceMap();
-        int sumOfAKind = 0;
-        for(Map.Entry<DieRoll, Integer> entry : map.entrySet()) {
-            if (entry.getValue() >= searchedValue) {
-                sumOfAKind = searchedValue * entry.getKey().toNumber();
-            }
-        }
-        return sumOfAKind;
+        return dice.findRollWithOccurrences(rollOccurrences)
+            .map(dieRoll -> dieRoll.toNumber() * rollOccurrences)
+            .orElse(0);
     }
 }

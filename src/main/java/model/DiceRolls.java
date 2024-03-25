@@ -1,7 +1,6 @@
 package model;
 
 import java.util.*;
-import java.util.stream.Stream;
 
 public record DiceRolls(DieRoll[] rolls) {
     public static final int NUMBER_OF_DIE_ROLLS = 5;
@@ -29,7 +28,7 @@ public record DiceRolls(DieRoll[] rolls) {
             throw new IllegalArgumentException(String.format("You must provide exactly %d rolls", NUMBER_OF_DIE_ROLLS));
         DieRoll[] tempRolls = new DieRoll[NUMBER_OF_DIE_ROLLS];
         for (int i = 0; i < rolls.length; i++)
-            tempRolls[i] = new DieRoll(rolls[i]);
+            tempRolls[i] = DieRoll.of(rolls[i]);
         return new DiceRolls(tempRolls);
     }
 
@@ -54,5 +53,12 @@ public record DiceRolls(DieRoll[] rolls) {
             arrayRollValues[index++] = roll.toNumber();
         }
         return arrayRollValues;
+    }
+
+    public Optional<DieRoll> findRollWithOccurrences(int rollOccurrences) {
+        var dieRoll = buildRollsOccurrenceMap().entrySet().stream()
+            .filter(entry -> entry.getValue() >= rollOccurrences)
+            .findAny();
+        return dieRoll.map(Map.Entry::getKey);
     }
 }

@@ -12,4 +12,8 @@ public record DieRoll(int roll) {
     public int toNumber() {
         return roll;
     }
+
+    public static DieRoll of(int value) {
+        return new DieRoll(value);
+    }
 }
