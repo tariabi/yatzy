@@ -5,7 +5,7 @@ import java.util.*;
 public record DiceRolls(DieRoll[] rolls) {
     public static final int NUMBER_OF_DIE_ROLLS = 5;
 
-    public int countFrequency(int countedValue) {
+    public int rollValueFrequency(int countedValue) {
         var rollValueFrequencies = rollValueFrequencies();
         DieRoll searchedRoll = DieRoll.of(countedValue);
         if (rollValueFrequencies.containsKey(searchedRoll))
