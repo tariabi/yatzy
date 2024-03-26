@@ -1,3 +1,5 @@
+import model.InvalidRollNumberException;
+import model.InvalidRollValueException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -211,6 +213,11 @@ public class YatzyTest {
 
     @Test
     void invalid_roll_value_throws_exception() {
-        assertThrows(IllegalArgumentException.class, () -> new Yatzy(1, 2, 7, 4, 6));
+        assertThrows(InvalidRollValueException.class, () -> new Yatzy(1, 2, 7, 4, 6));
+    }
+
+    @Test
+    void invalid_roll_number_throws_exception() {
+        assertThrows(InvalidRollNumberException.class, () -> new Yatzy(1, 2, 3, 4, 5, 6));
     }
 }

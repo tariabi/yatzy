@@ -6,7 +6,7 @@ public record DieRoll(int roll) {
             this.roll = roll;
             return;
         }
-        throw new IllegalArgumentException("Not an acceptable die value:" + roll);
+        throw new InvalidRollValueException(roll, "Not an acceptable die value" );
     }
 
     public int toNumber() {

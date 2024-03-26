@@ -30,7 +30,7 @@ public record DiceRolls(DieRoll[] rolls) {
 
     public static DiceRolls fromRolls(int... rolls) {
         if (rolls.length != NUMBER_OF_DIE_ROLLS)
-            throw new IllegalArgumentException(String.format("You must provide exactly %d rolls", NUMBER_OF_DIE_ROLLS));
+            throw new InvalidRollNumberException(rolls.length, String.format("You must provide exactly %d rolls", NUMBER_OF_DIE_ROLLS));
         DieRoll[] tempRolls = new DieRoll[NUMBER_OF_DIE_ROLLS];
         for (int i = 0; i < rolls.length; i++)
             tempRolls[i] = DieRoll.of(rolls[i]);
