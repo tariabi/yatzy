@@ -217,7 +217,12 @@ public class YatzyTest {
     }
 
     @Test
-    void invalid_roll_number_throws_exception() {
+    void invalid_greater_roll_number_throws_exception() {
         assertThrows(InvalidRollNumberException.class, () -> new Yatzy(1, 2, 3, 4, 5, 6));
+    }
+
+    @Test
+    void invalid_lesser_roll_number_throws_exception() {
+        assertThrows(InvalidRollNumberException.class, () -> new Yatzy(1, 2, 3, 4));
     }
 }
