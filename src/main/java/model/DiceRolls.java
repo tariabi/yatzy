@@ -5,12 +5,12 @@ import java.util.*;
 public record DiceRolls(DieRoll[] rolls) {
     public static final int NUMBER_OF_DIE_ROLLS = 5;
 
-    public int countNumber(int countedValue) {
-        int sum = 0;
-        for (DieRoll dieRoll : rolls)
-            if (dieRoll.toNumber() == countedValue)
-                sum += countedValue;
-        return sum;
+    public int countFrequency(int countedValue) {
+        var rollValueFrequencies = rollValueFrequencies();
+        DieRoll searchedRoll = DieRoll.of(countedValue);
+        if (rollValueFrequencies.containsKey(searchedRoll))
+            return rollValueFrequencies.get(searchedRoll);
+        return 0;
     }
 
     public Map<DieRoll, Integer> rollValueFrequencies() {

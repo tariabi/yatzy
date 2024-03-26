@@ -12,6 +12,6 @@ public class CountScoreCalculator extends AbstractYatzyScoreCalculator {
 
     @Override
     public int computeScore() {
-        return dice.countNumber(countedValue);
+        return dice.countFrequency(countedValue) * countedValue;
     }
 }
