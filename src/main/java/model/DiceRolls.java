@@ -40,19 +40,10 @@ public record DiceRolls(DieRoll[] rolls) {
     }
 
     public boolean isSequence() {
-        var rollValues = arrayRollValues();
+        var rollValues = Arrays.stream(rolls).mapToInt(DieRoll::toNumber).toArray();
         Arrays.sort(rollValues);
         return Arrays.equals(rollValues, new int[] {1,2,3,4,5})
         || Arrays.equals(rollValues, new int[] {2,3,4,5,6});
-    }
-
-    private int[] arrayRollValues() {
-        int[] arrayRollValues = new int[NUMBER_OF_DIE_ROLLS];
-        int index = 0;
-        for(DieRoll roll: rolls) {
-            arrayRollValues[index++] = roll.toNumber();
-        }
-        return arrayRollValues;
     }
 
     public List<DieRoll> findRollsWithOccurrences(int rollOccurrences) {
