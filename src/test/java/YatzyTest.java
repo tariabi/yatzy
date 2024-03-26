@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class YatzyTest {
     @Test
@@ -206,5 +207,10 @@ public class YatzyTest {
     @Test
     void fullHouse_23456_yields_0() {
         assertEquals(0, new Yatzy(2, 3, 4, 5, 6).fullHouse());
+    }
+
+    @Test
+    void invalid_roll_value_throws_exception() {
+        assertThrows(IllegalArgumentException.class, () -> new Yatzy(1, 2, 7, 4, 6));
     }
 }
