@@ -9,7 +9,7 @@ public class YatzyScoreCalculator extends AbstractYatzyScoreCalculator {
     }
     @Override
     public int computeScore() {
-        var map = dice.buildRollsOccurrenceMap();
+        var map = dice.rollValueFrequencies();
         if (map.containsValue(DiceRolls.NUMBER_OF_DIE_ROLLS))
             return 50;
         return 0;

@@ -13,11 +13,10 @@ public record DiceRolls(DieRoll[] rolls) {
         return sum;
     }
 
-    public Map<DieRoll, Integer> buildRollsOccurrenceMap() {
+    public Map<DieRoll, Integer> rollValueFrequencies() {
         Map<DieRoll, Integer> map = new HashMap<>();
         for (DieRoll dieRoll : rolls) {
-            if (!map.containsKey(dieRoll))
-                map.put(dieRoll, 0);
+            map.putIfAbsent(dieRoll, 0);
             map.put(dieRoll, 1 + map.get(dieRoll));
         }
         return map;
@@ -47,7 +46,7 @@ public record DiceRolls(DieRoll[] rolls) {
     }
 
     public List<DieRoll> findRollsWithOccurrences(int rollOccurrences) {
-       return new ArrayList<>(buildRollsOccurrenceMap().entrySet().stream()
+       return new ArrayList<>(rollValueFrequencies().entrySet().stream()
             .filter(entry -> entry.getValue() >= rollOccurrences)
             .map(Map.Entry::getKey).toList());
     }
