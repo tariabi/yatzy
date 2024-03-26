@@ -4,16 +4,16 @@ import model.DiceRolls;
 import model.DieRoll;
 
 public class ManyOfAKindScoreCalculator extends AbstractYatzyScoreCalculator {
-    private final int rollOccurrences;
+    private final int frequencyOfKind;
 
-    public ManyOfAKindScoreCalculator(DiceRolls diceRolls, int rollOccurrences) {
+    public ManyOfAKindScoreCalculator(DiceRolls diceRolls, int frequencyOfKind) {
         super(diceRolls);
-        this.rollOccurrences = rollOccurrences;
+        this.frequencyOfKind = frequencyOfKind;
     }
     @Override
     public int computeScore() {
-        var sum = dice.findRollsWithOccurrences(rollOccurrences)
+        var sum = dice.rollsHavingFrequencyHigherOrEqualTo(frequencyOfKind)
             .stream().mapToInt(DieRoll::toNumber).sum();
-        return sum * rollOccurrences;
+        return sum * frequencyOfKind;
     }
 }

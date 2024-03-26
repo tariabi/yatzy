@@ -12,7 +12,7 @@ public class PairScoreCalculator extends AbstractYatzyScoreCalculator {
 
     @Override
     public int computeScore() {
-        var allPairs = dice.findRollsWithOccurrences(2);
+        var allPairs = dice.rollsHavingFrequencyHigherOrEqualTo(2);
         if (!allPairs.isEmpty()) {
             allPairs.sort(Comparator.comparingInt(DieRoll::toNumber).reversed());
             var highestPair = allPairs.get(0);

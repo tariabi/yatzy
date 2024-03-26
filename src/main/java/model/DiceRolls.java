@@ -13,6 +13,12 @@ public record DiceRolls(DieRoll[] rolls) {
         return 0;
     }
 
+    public List<DieRoll> rollsHavingFrequencyHigherOrEqualTo(int minFrequency) {
+        return new ArrayList<>(rollValueFrequencies().entrySet().stream()
+            .filter(entry -> entry.getValue() >= minFrequency)
+            .map(Map.Entry::getKey).toList());
+    }
+
     public Map<DieRoll, Integer> rollValueFrequencies() {
         Map<DieRoll, Integer> map = new HashMap<>();
         for (DieRoll dieRoll : rolls) {
@@ -45,9 +51,4 @@ public record DiceRolls(DieRoll[] rolls) {
         || Arrays.equals(rollValues, new int[] {2,3,4,5,6});
     }
 
-    public List<DieRoll> findRollsWithOccurrences(int rollOccurrences) {
-       return new ArrayList<>(rollValueFrequencies().entrySet().stream()
-            .filter(entry -> entry.getValue() >= rollOccurrences)
-            .map(Map.Entry::getKey).toList());
-    }
 }
